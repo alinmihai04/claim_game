@@ -15,8 +15,11 @@ namespace Claim_Game
     {
         private static List<Bitmap> cardsBitmap = new List<Bitmap>();
         private static List<bool> cardsUsed = new List<bool>();
+        private static List<int> cardsRank = new List<int>();
+        private static List<int> cardsDeck = new List<int>();
+        private static int nullCard = 0;
 
-        public List<Bitmap> CardsBitmap
+        public static List<Bitmap> CardsBitmap
         {
            get { return cardsBitmap; }
         }
@@ -24,11 +27,24 @@ namespace Claim_Game
         {
             get { return cardsUsed; }
         }
+        public static List<int> CardsRank
+        {
+            get { return cardsRank; }
+        }
+        public static List<int> CardsDeck
+        {
+            get { return cardsDeck; }
+        }
+        public static int NullCard
+        {
+            get { return nullCard; }
+        }
 
         public static void initializeCardsClass()
         {
             initializeCardsBoolArray();
             initializeCardsBitmapArray();
+            initializeCardsRanks();
         }
 
         public static void Debug_ResetBools()
@@ -36,6 +52,47 @@ namespace Claim_Game
             for(int i = 0; i < 52; i++)
             {
                 cardsUsed[i] = false;
+            }
+        }
+
+        public static void generateRandomDeck()
+        {
+            Random rand = new Random();
+            int randIndex;
+
+            for(int i = 0; i < 47; i++)
+            {
+                randIndex = rand.Next(52);
+
+                while(cardsUsed[randIndex])
+                {
+                    randIndex = rand.Next(52);
+                }
+
+                cardsUsed[randIndex] = true;
+                cardsDeck.Add(randIndex);
+            }
+            /*
+            randIndex = rand.Next(cardsDeck.Count); // pentru prima carte din pachet
+            firstCardIndex = cardsDeck[randIndex];
+            CardsDeck.RemoveAt(randIndex);
+            
+            
+            randIndex = rand.Next(cardsDeck.Count); // cartea nula
+            nullCard = cardsDeck[randIndex];
+            CardsDeck.RemoveAt(randIndex);
+            */
+        }
+
+
+        private static void initializeCardsRanks()
+        {
+            for(int i = 0; i < 13; i++)
+            {
+                for(int j = 0; j < 4; j++)
+                {
+                    cardsRank.Add(i+1);
+                }
             }
         }
 
@@ -103,7 +160,7 @@ namespace Claim_Game
             cardsBitmap.Add(new Bitmap(Claim_Game.Properties.Resources._13_4));
         }
 
-        public static Bitmap generateRandomCard()
+        public static Bitmap generateRandomCard(ref int returning_index)
         {
             Random rand = new Random();
             int randomImageIndex = rand.Next(52);
@@ -114,6 +171,8 @@ namespace Claim_Game
             }
 
             cardsUsed[randomImageIndex] = true;
+
+            returning_index = randomImageIndex;
 
             return cardsBitmap[randomImageIndex];
         }
