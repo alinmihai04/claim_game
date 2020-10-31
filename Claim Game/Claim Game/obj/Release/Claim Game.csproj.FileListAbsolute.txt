@@ -1,0 +1,9 @@
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\bin\Release\Claim Game.exe.config
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\bin\Release\Claim Game.exe
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\bin\Release\Claim Game.pdb
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\obj\Release\Claim_Game.Form1.resources
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\obj\Release\Claim_Game.Properties.Resources.resources
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\obj\Release\Claim Game.csproj.GenerateResource.cache
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\obj\Release\Claim Game.csproj.CoreCompileInputs.cache
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\obj\Release\Claim Game.exe
+C:\Users\Alin\Documents\GitHub\claim_game\Claim Game\Claim Game\obj\Release\Claim Game.pdb
